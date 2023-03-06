@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
-import useIncrement from "../hooks/useIncrement";
+import { useState } from "react";
 
 function Counter1() {
-    const [count, setCount] = useIncrement(1);
+    const [count, setCount] = useState(1);
 
-    useEffect(() => {
-        setCount(count = count + 1)
-    }, [count])
+    const increase = () => {
+        setCount(count + 1);
+    }
 
     return (
         <>
-            <div>Count {count}</div>
-            <button onClick={increase}>Add 1</button>
+            <h1>Count {count}</h1>
+            <button style={{padding: 10}} onClick={increase}>Add 1</button>
         </>
     )
 }

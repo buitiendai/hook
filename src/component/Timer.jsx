@@ -5,11 +5,11 @@ function Timer() {
 
     useEffect(() => {
         if(count >= 0) {
-            count = count - 1;
+            setCount(count - 1);
         } else {
             alert(`Time's Up`);
         }
-    })
+    }, [count])
 
     setInterval(function() {
         setCount(count);
